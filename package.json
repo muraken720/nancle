@@ -1,0 +1,29 @@
+{
+  "name": "nancle",
+  "version": "0.0.1",
+  "description": "nancle ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muraken720/nancle.git"
+  },
+  "author": "Kenichiro Murata",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muraken720/nancle/issues"
+  },
+  "homepage": "https://github.com/muraken720/nancle",
+  "devDependencies": {
+    "gulp": "^3.5.2",
+    "coffee-script": "^1.7.1",
+    "templatizer": "^0.2.10",
+    "gulp-shell": "^0.2.4",
+    "gulp-coffee": "^1.4.1",
+    "gulp-stylus": "0.0.13",
+    "jeet": "^5.1.3",
+    "gulp-connect": "^1.0.7"
+  }
+}
