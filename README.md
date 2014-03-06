@@ -43,7 +43,7 @@ public
 ## javascript
 - coffeescript
 
-## view(html)
+## html
 - jade
 - templatizer
 - vue.js
@@ -55,7 +55,8 @@ public
 ## build tool
 - bower
 - gulp
-- gulp-shell
 - gulp-coffee
 - gulp-stylus
+- gulp-shell
 - gulp-connect (LiveReload)
+
