@@ -5,13 +5,13 @@ This project is a Single Page Application framework.
 
 # GettingStarted
 
-``` 
- $ npm install  
- $ bower install   
- $ gulp  
+```
+$ npm install
+$ bower install
+$ gulp
 ```
 
-And now you cat edit app.coffee, app.styl, templates/*.jade.
+And now you can edit app.coffee, app.styl, templates/*.jade.
 
 # File Strucure
 
