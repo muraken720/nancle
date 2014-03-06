@@ -40,13 +40,13 @@ public
 
 # Technology Stack
 
-## javascript
-- coffeescript
-
 ## html
 - jade
 - templatizer
 - vue.js
+
+## javascript
+- coffeescript
 
 ## css
 - stylus
