@@ -4,6 +4,7 @@ shell = require 'gulp-shell'
 coffee = require 'gulp-coffee'
 stylus = require 'gulp-stylus'
 connect = require 'gulp-connect'
+browserify = require 'gulp-browserify'
 
 gulp.task 'connect', connect.server(
   root: ['public']
@@ -14,20 +15,16 @@ gulp.task 'connect', connect.server(
 )
 
 gulp.task 'templatizer', ->
-  templatizer(__dirname + '/src/jade/templates', __dirname + '/public/js/templates.js')
+  templatizer(__dirname + '/src/jade/templates', __dirname + '/src/js/templates.js')
 
-gulp.task('createIndex', shell.task([
+gulp.task('jade', shell.task([
   'jade -P src/jade/index.jade -o public'
 ]))
-
-gulp.task 'copy', ->
-  gulp.src('bower_components/vue/dist/vue.min.js')
-    .pipe(gulp.dest('public/js/lib'))
 
 gulp.task 'coffee', ->
   gulp.src('src/coffee/**/*.coffee')
     .pipe(coffee())
-    .pipe(gulp.dest('public/js'))
+    .pipe(gulp.dest('src/js'))
 
 gulp.task 'stylus', ->
   gulp.src('src/styl/*.styl')
@@ -37,8 +34,12 @@ gulp.task 'stylus', ->
     .pipe(gulp.dest('public/css'))
     .pipe(connect.reload())
 
-gulp.task 'js', ->
-  gulp.src('public/js/*.js')
+gulp.task 'browserify', ->
+  gulp.src('src/js/app.js')
+    .pipe(browserify(
+      insertGlobals: true
+    ))
+    .pipe(gulp.dest('public/js'))
     .pipe(connect.reload())
 
 gulp.task 'html', ->
@@ -46,16 +47,17 @@ gulp.task 'html', ->
     .pipe(connect.reload())
 
 gulp.task 'watch', ->
-  gulp.watch ['src/jade/*.jade'], ['createIndex']
+  gulp.watch ['src/jade/*.jade'], ['jade']
   gulp.watch ['src/jade/templates/**/*.jade'], ['templatizer']
   gulp.watch ['src/coffee/**/*.coffee'], ['coffee']
   gulp.watch ['src/styl/*.styl'], ['stylus']
-  gulp.watch ['public/js/*.js'], ['js']
+  gulp.watch ['src/js/*.js'], ['browserify']
   gulp.watch ['public/index.html'], ['html']
 
 gulp.task 'default', [
   'connect'
   'templatizer'
+  'jade'
   'coffee'
   'stylus'
   'watch'
