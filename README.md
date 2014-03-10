@@ -7,7 +7,6 @@ This project is a Single Page Application framework.
 
 ```
 $ npm install
-$ bower install
 $ gulp
 ```
 
@@ -25,6 +24,9 @@ src
 │   ├── layout.jade
 │   └── templates
 │       └── demo.jade
+├── js
+│   ├── app.js
+│   └── templates.js
 └── styl
     └── app.styl
 public
@@ -32,10 +34,7 @@ public
 │   └── app.css
 ├── index.html
 └── js
-    ├── app.js
-    ├── lib
-    │   └── vue.min.js
-    └── templates.js
+    └── app.js
 ```
 
 # Technology Stack
@@ -53,10 +52,10 @@ public
 - jeet
 
 ## build tool
-- bower
 - gulp
 - gulp-coffee
 - gulp-stylus
 - gulp-shell
+- gulp-browserify
 - gulp-connect (LiveReload)
 
