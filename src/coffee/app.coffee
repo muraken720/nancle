@@ -1,5 +1,11 @@
+_ = require 'underscore'
+Backbone = require 'backbone'
+Vue = require 'vue'
+templates = require './templates'
+
 demo = new Vue
   el: '#container'
-  template: templatizer.demo()
+  template: templates.demo()
   data:
     message: 'Hello nancle!'
+
