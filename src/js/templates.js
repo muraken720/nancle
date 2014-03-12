@@ -12,6 +12,11 @@ exports["demo"] = function tmpl_demo() {
     return '<h1>nancle DEMO</h1><p>{{message}}</p><input v-model="message"/>';
 };
 
+// list.jade compiled template
+exports["list"] = function tmpl_list() {
+    return '<ul><li v-repeat="people">{{$index}} - {{firstName}}, {{lastName}}</li></ul>';
+};
+
 
 // attach to window or export with commonJS
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {

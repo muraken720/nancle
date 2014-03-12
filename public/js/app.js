@@ -9664,7 +9664,7 @@ module.exports = ViewModel
 },{"./batcher":9,"./compiler":11,"./transition":29,"./utils":30,"/Users/ken/work/nancle/node_modules/gulp-browserify/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js":7,"buffer":4}],32:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 (function() {
-  var Backbone, Vue, demo, templates, _;
+  var Backbone, Person, Vue, acro, demo, ken, menu, templates, _;
 
   _ = require('underscore');
 
@@ -9682,9 +9682,44 @@ module.exports = ViewModel
     }
   });
 
+  Person = (function() {
+    function Person(options) {
+      this.firstName = options.firstName, this.lastName = options.lastName;
+    }
+
+    return Person;
+
+  })();
+
+  ken = new Person({
+    firstName: 'Kenichiro',
+    lastName: 'Murata'
+  });
+
+  console.log(JSON.stringify(ken));
+
+  menu = new Vue({
+    el: '#list',
+    template: templates.list(),
+    data: {
+      people: []
+    }
+  });
+
+  menu.$data.people.push(ken);
+
+  acro = new Person({
+    firstName: 'Acroquest',
+    lastName: 'Technology'
+  });
+
+  ken.firstName = 'Ken';
+
+  menu.$data.people.push(acro);
+
 }).call(this);
 
-}).call(this,require("/Users/ken/work/nancle/node_modules/gulp-browserify/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_8bbe815a.js","/")
+}).call(this,require("/Users/ken/work/nancle/node_modules/gulp-browserify/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_f947ba06.js","/")
 },{"./templates":33,"/Users/ken/work/nancle/node_modules/gulp-browserify/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js":7,"backbone":1,"buffer":4,"underscore":8,"vue":26}],33:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 (function () {
@@ -9699,6 +9734,11 @@ var jade = exports.jade=function(exports){Array.isArray||(Array.isArray=function
 // demo.jade compiled template
 exports["demo"] = function tmpl_demo() {
     return '<h1>nancle DEMO</h1><p>{{message}}</p><input v-model="message"/>';
+};
+
+// list.jade compiled template
+exports["list"] = function tmpl_list() {
+    return '<ul><li v-repeat="people">{{$index}} - {{firstName}}, {{lastName}}</li></ul>';
 };
 
 
