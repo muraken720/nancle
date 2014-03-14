@@ -1,7 +1,5 @@
-_ = require 'underscore'
-Backbone = require 'backbone'
 Vue = require 'vue'
-templates = require './templates'
+templates = require './templates.js'
 
 demo = new Vue
   el: '#container'
@@ -31,6 +29,6 @@ acro = new Person
   firstName: 'Acroquest'
   lastName: 'Technology'
 
-ken.firstName = 'Ken'
-
 menu.$data.people.push acro
+
+ken.firstName = 'Ken'

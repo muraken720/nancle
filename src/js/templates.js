@@ -9,7 +9,7 @@ var jade = exports.jade=function(exports){Array.isArray||(Array.isArray=function
 
 // demo.jade compiled template
 exports["demo"] = function tmpl_demo() {
-    return '<h1>nancle DEMO</h1><p>{{message}}</p><input v-model="message"/>';
+    return '<h1>Nancle DEMO</h1><p>{{message}}</p><input v-model="message"/>';
 };
 
 // list.jade compiled template

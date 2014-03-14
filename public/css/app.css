@@ -1,23 +1,23 @@
-section,
+body,
 section aside,
 section article {
   *zoom: 1;
 }
-section:before,
+body:before,
 section aside:before,
 section article:before,
-section:after,
+body:after,
 section aside:after,
 section article:after {
   content: '';
   display: table;
 }
-section:after,
+body:after,
 section aside:after,
 section article:after {
   clear: both;
 }
-section {
+body {
   width: auto;
   max-width: 600px;
   float: none;
