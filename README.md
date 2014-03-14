@@ -1,7 +1,7 @@
 nancle
 ======
 
-This project is a Single Page Application framework.
+This project is a concept project for Single Page Application framework for @vuejs.
 
 # GettingStarted
 
@@ -17,15 +17,14 @@ And now you can edit app.coffee, app.styl, templates/*.jade.
 ```
 $ tree src public
 src
-├── coffee
-│   └── app.coffee
 ├── jade
 │   ├── index.jade
-│   ├── layout.jade
-│   └── templates
-│       └── demo.jade
+│   └── layout.jade
+├── jade-templates
+│   ├── demo.jade
+│   └── list.jade
 ├── js
-│   ├── app.js
+│   └── app.coffee
 │   └── templates.js
 └── styl
     └── app.styl
@@ -41,11 +40,11 @@ public
 
 ## html
 - jade
-- templatizer
-- vue.js
 
 ## javascript
 - coffeescript
+- templatizer
+- vue.js
 
 ## css
 - stylus
@@ -53,9 +52,10 @@ public
 
 ## build tool
 - gulp
-- gulp-coffee
-- gulp-stylus
-- gulp-shell
 - gulp-browserify
+- gulp-plumber
+- gulp-rename
+- gulp-uglify
+- gulp-stylus
+- gulp-jade
 - gulp-connect (LiveReload)
-
