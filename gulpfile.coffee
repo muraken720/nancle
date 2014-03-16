@@ -9,7 +9,7 @@ jade = require 'gulp-jade'
 connect = require 'gulp-connect'
 
 gulp.task 'templatizer', ->
-  templatizer(__dirname + '/src/jade-templates', __dirname + '/src/js/templates.js')
+  templatizer(__dirname + '/src/jade-templates', __dirname + '/src/js/_templates.js')
 
 gulp.task 'browserify', ->
   gulp.src('src/js/app.coffee', {read: false})

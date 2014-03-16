@@ -1,34 +1,32 @@
-Vue = require 'vue'
-templates = require './templates.js'
+vm = require './viewmodel'
+model = require './model'
 
-demo = new Vue
+demo = new vm.Demo
   el: '#container'
-  template: templates.demo()
   data:
     message: 'Hello nancle!'
 
-class Person
-  constructor: (options) ->
-    {@firstName, @lastName} = options
-
-ken = new Person
-  firstName: 'Kenichiro'
-  lastName: 'Murata'
-
-console.log(JSON.stringify(ken))
-
-menu = new Vue
+menu = new vm.Menu
   el: '#list'
-  template: templates.list()
   data:
     people: []
 
+ken = new model.Person
+  firstName: 'Kenichiro'
+  lastName: 'Murata'
+
 menu.$data.people.push ken
 
-acro = new Person
+console.log JSON.stringify(menu.$data)
+
+acro = new model.Person
   firstName: 'Acroquest'
   lastName: 'Technology'
 
 menu.$data.people.push acro
 
+console.log JSON.stringify(menu.$data)
+
 ken.firstName = 'Ken'
+
+console.log JSON.stringify(menu.$data)
