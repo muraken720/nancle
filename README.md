@@ -21,11 +21,17 @@ src
 │   ├── index.jade
 │   └── layout.jade
 ├── jade-templates
-│   ├── demo.jade
-│   └── list.jade
+│   ├── container.jade
+│   ├── home.jade
+│   ├── notfound.jade
+│   ├── page1.jade
+│   └── page2.jade
 ├── js
-│   └── app.coffee
-│   └── templates.js
+│   ├── _templates.js
+│   ├── app.coffee
+│   ├── model.coffee
+│   ├── router.coffee
+│   └── viewmodel.coffee
 └── styl
     └── app.styl
 public
