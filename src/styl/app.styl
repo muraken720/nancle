@@ -1,10 +1,38 @@
 body
-  center(600px)
+  padding 0px
+  margin 0px
+  center 600px
+  font-family 'Helvetica Neue', Arial, sans-serif
 
-section
+header
+  nav
+  ul
+    list-style-type none
+    padding 0px
 
-  aside
-    col(2/3)
+  li
+    display inline-block
+    margin-right 10px
 
-  article
-    col(1/3)
+  a
+    color #999
+    text-decoration none
+
+  a.current
+    color blue
+
+article.view
+  position absolute
+  opacity 1
+  -webkit-transition all .2s ease
+  transition all .2s ease
+
+article.v-enter
+  opacity 0
+  -webkit-transform translate3d(30px, 0, 0)
+  transform translate3d(30px, 0, 0)
+
+article.v-leave
+  opacity 0
+  -webkit-transform translate3d(-30px, 0, 0)
+  transform translate3d(-30px, 0, 0)

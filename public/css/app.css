@@ -1,23 +1,17 @@
-body,
-section aside,
-section article {
+body {
   *zoom: 1;
 }
 body:before,
-section aside:before,
-section article:before,
-body:after,
-section aside:after,
-section article:after {
+body:after {
   content: '';
   display: table;
 }
-body:after,
-section aside:after,
-section article:after {
+body:after {
   clear: both;
 }
 body {
+  padding: 0px;
+  margin: 0px;
   width: auto;
   max-width: 600px;
   float: none;
@@ -26,32 +20,37 @@ body {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
-section aside {
-  float: left;
-  display: inline;
-  clear: none;
-  text-align: inherit;
-  padding-left: 0;
-  padding-right: 0;
-  width: 65.66666666666666%;
-  margin-left: 0%;
-  margin-right: 3%;
+header nav,
+header ul {
+  list-style-type: none;
+  padding: 0px;
 }
-section aside:last-child {
-  margin-right: 0%;
+header li {
+  display: inline-block;
+  margin-right: 10px;
 }
-section article {
-  float: left;
-  display: inline;
-  clear: none;
-  text-align: inherit;
-  padding-left: 0;
-  padding-right: 0;
-  width: 31.33333333333333%;
-  margin-left: 0%;
-  margin-right: 3%;
+header a {
+  color: #999;
+  text-decoration: none;
 }
-section article:last-child {
-  margin-right: 0%;
+header a.current {
+  color: #00f;
+}
+article.view {
+  position: absolute;
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+article.v-enter {
+  opacity: 0;
+  -webkit-transform: translate3d(30px, 0, 0);
+  transform: translate3d(30px, 0, 0);
+}
+article.v-leave {
+  opacity: 0;
+  -webkit-transform: translate3d(-30px, 0, 0);
+  transform: translate3d(-30px, 0, 0);
 }

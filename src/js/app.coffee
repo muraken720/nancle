@@ -1,32 +1,24 @@
+Vue = require 'vue'
+nancle = require './router'
+templates = require './_templates.js'
 vm = require './viewmodel'
-model = require './model'
 
-demo = new vm.Demo
+router = new nancle.Router {routes: ['home', 'page1', 'page2']}
+
+initialRoute = router.getRoute()
+
+container = new Vue
   el: '#container'
+  template: templates.container()
   data:
-    message: 'Hello nancle!'
-
-menu = new vm.Menu
-  el: '#list'
-  data:
-    people: []
-
-ken = new model.Person
-  firstName: 'Kenichiro'
-  lastName: 'Murata'
-
-menu.$data.people.push ken
-
-console.log JSON.stringify(menu.$data)
-
-acro = new model.Person
-  firstName: 'Acroquest'
-  lastName: 'Technology'
-
-menu.$data.people.push acro
-
-console.log JSON.stringify(menu.$data)
-
-ken.firstName = 'Ken'
-
-console.log JSON.stringify(menu.$data)
+    currentRoute: initialRoute
+    routes: router.routes
+    subdata:
+      test: '123'
+  computed:
+    currentView:
+      $get: () ->
+        'nancle-' + @currentRoute
+  created: () ->
+    window.addEventListener 'hashchange', () =>
+      @currentRoute = router.getRoute()

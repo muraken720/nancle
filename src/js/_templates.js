@@ -7,14 +7,29 @@ var jade = exports.jade=function(exports){Array.isArray||(Array.isArray=function
 
 // create our folder objects
 
-// demo.jade compiled template
-exports["demo"] = function tmpl_demo() {
-    return '<h1>Nancle DEMO</h1><p>{{message}}</p><input v-model="message"/>';
+// container.jade compiled template
+exports["container"] = function tmpl_container() {
+    return '<header><h1>Nancle Demo</h1><nav><ul><li v-repeat="routes"><a href="#!/{{$value}}" v-class="current:currentRoute == $value">{{$value}}</a></li></ul></nav></header><article v-view="currentView" v-with="global: subdata" v-transition class="view"></article>';
 };
 
-// list.jade compiled template
-exports["list"] = function tmpl_list() {
-    return '<ul><li v-repeat="people">{{$index}} - {{firstName}}, {{lastName}}</li></ul>';
+// home.jade compiled template
+exports["home"] = function tmpl_home() {
+    return '<h1>Home</h1><p>Hello! {{msg}} {{global.test}}</p><input v-model="message"><p>{{message}}</p>';
+};
+
+// notfound.jade compiled template
+exports["notfound"] = function tmpl_notfound() {
+    return '<h1>404</h1>';
+};
+
+// page1.jade compiled template
+exports["page1"] = function tmpl_page1() {
+    return '<h1>Page1</h1><p>Hello! {{msg}} {{global.test}}</p>';
+};
+
+// page2.jade compiled template
+exports["page2"] = function tmpl_page2() {
+    return '<h1>Page2</h1><p>Hello! {{msg}} {{global.test}}</p>';
 };
 
 

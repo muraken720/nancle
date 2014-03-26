@@ -1,0 +1,8 @@
+header
+  h1 Nancle Demo
+  nav
+    ul
+      li(v-repeat='routes')
+        a(href='#!/{{$value}}', v-class='current:currentRoute == $value'){{$value}}
+
+article(v-view='currentView', class='view', v-with='global: subdata', v-transition)

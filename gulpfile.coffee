@@ -9,7 +9,8 @@ jade = require 'gulp-jade'
 connect = require 'gulp-connect'
 
 gulp.task 'templatizer', ->
-  templatizer(__dirname + '/src/jade-templates', __dirname + '/src/js/_templates.js')
+#  templatizer(__dirname + '/src/jade-templates', __dirname + '/src/js/_templates.js')
+  templatizer(__dirname + '/src/jade-templates', __dirname + '/src/js/_templates.js', null, { doctype: '5' })
 
 gulp.task 'browserify', ->
   gulp.src('src/js/app.coffee', {read: false})
@@ -33,7 +34,7 @@ gulp.task 'stylus', ->
     .pipe(connect.reload())
 
 gulp.task 'jade', ->
-  gulp.src('src/jade/**/*.jade')
+  gulp.src('src/jade/index.jade')
     .pipe(jade(
       pretty: true
     ))
@@ -50,7 +51,7 @@ gulp.task 'connect', connect.server(
 
 gulp.task 'watch', ->
   gulp.watch ['src/jade-templates/**/*.jade'], ['templatizer']
-  gulp.watch ['src/js/**/*.coffee', 'src/js/templates.js'], ['browserify']
+  gulp.watch ['src/js/**/*.coffee', 'src/js/_templates.js'], ['browserify']
   gulp.watch ['src/styl/*.styl'], ['stylus']
   gulp.watch ['src/jade/**/*.jade'], ['jade']
 
