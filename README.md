@@ -8,6 +8,8 @@ This project is a concept project for Single Page Application framework for @vue
 ```
 $ npm install
 $ gulp
+
+$ gulp phantomjs
 ```
 
 And now you can edit app.coffee, app.styl, templates/*.jade.
@@ -40,6 +42,12 @@ public
 ├── index.html
 └── js
     └── app.js
+test/
+├── assets
+│   ├── test.html
+│   └── test.js
+├── test.coffee
+└── test.jade
 ```
 
 # Technology Stack
@@ -56,6 +64,12 @@ public
 - stylus
 - jeet
 
+## test
+- mocha
+- power-assert
+- espowerify
+- mocha-phantomjs
+
 ## build tool
 - gulp
 - gulp-browserify
@@ -65,3 +79,5 @@ public
 - gulp-stylus
 - gulp-jade
 - gulp-connect (LiveReload)
+- gulp-grunt
+- grunt-mocha-phantomjs
