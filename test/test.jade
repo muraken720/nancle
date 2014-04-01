@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    titl nancle test
+    meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="../../node_modules/mocha-phantomjs/node_modules/mocha/mocha.css")
+  body
+    #mocha
+
+    script(src="../../node_modules/mocha-phantomjs/node_modules/mocha/mocha.js")
+    script mocha.setup('bdd')
+    script(src="test.js")
+    script.
+      if (window.mochaPhantomJS) {
+        mochaPhantomJS.run();
+      } else {
+        mocha.run();
+      }
