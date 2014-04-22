@@ -5,20 +5,16 @@ vm = require './viewmodel'
 
 router = new nancle.Router {routes: ['home', 'page1', 'page2']}
 
-initialRoute = router.getRoute()
+initialView = router.getRoute()
 
 container = new Vue
   el: '#container'
   template: templates.container()
   data:
-    currentRoute: initialRoute
+    currentView: initialView
     routes: router.routes
     subdata:
       test: '123'
-  computed:
-    currentView:
-      $get: () ->
-        'nancle-' + @currentRoute
   created: () ->
     window.addEventListener 'hashchange', () =>
-      @currentRoute = router.getRoute()
+      @currentView = router.getRoute()

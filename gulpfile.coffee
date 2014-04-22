@@ -10,7 +10,7 @@ connect = require 'gulp-connect'
 require('gulp-grunt')(gulp, {prefix: ''})
 
 gulp.task 'templatizer', ->
-  templatizer(__dirname + '/src/jade-templates', __dirname + '/src/js/_templates.js', null, { doctype: '5' })
+  templatizer(__dirname + '/src/jade-templates', __dirname + '/src/js/_templates.js', { jade : { doctype: 'html' } })
 
 gulp.task 'browserify', ->
   gulp.src('src/js/app.coffee', {read: false})

@@ -7,12 +7,11 @@
     "url": "https://github.com/muraken720/nancle/issues"
   },
   "dependencies": {
-    "vue": "^0.10.2"
+    "vue": "^0.10.3"
   },
   "devDependencies": {
     "coffee-script": "^1.7.1",
     "coffeeify": "^0.6.0",
-    "espowerify": "^0.2.0",
     "grunt": "^0.4.4",
     "grunt-mocha-phantomjs": "^0.4.3",
     "gulp": "^3.5.2",
@@ -28,7 +27,8 @@
     "mocha": "^1.18.2",
     "mocha-phantomjs": "^3.3.2",
     "power-assert": "^0.4.1",
-    "templatizer": "git://github.com/muraken720/templatizer#dev"
+    "templatizer": "^0.3.0",
+    "espowerify": "^0.6.1"
   },
   "homepage": "https://github.com/muraken720/nancle",
   "keywords": [
