@@ -14,7 +14,7 @@ container = new Vue
     currentView: initialView
     routes: router.routes
     subdata:
-      test: '123'
+      test: 'Vert.x'
   created: () ->
     window.addEventListener 'hashchange', () =>
       @currentView = router.getRoute()

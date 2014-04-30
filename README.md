@@ -14,7 +14,7 @@ $ gulp phantomjs
 
 And now you can edit app.coffee, app.styl, templates/*.jade.
 
-# File Strucure
+# File Structure
 
 ```
 $ tree src public

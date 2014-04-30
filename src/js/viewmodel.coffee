@@ -5,7 +5,7 @@ templates = require './_templates.js'
 Vue.component 'home', Vue.extend
   template: templates.home()
   created: () ->
-    @msg = 'Home sweet home!'
+    @msg = 'AWS Elastic Beanstalk for Docker!'
 
 Vue.component 'page1', Vue.extend
   template: templates.page1()
